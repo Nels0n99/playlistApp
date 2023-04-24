@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  include mixins/songCard
+  div.container
+    div.add-button-row
+      a.button.save(href="/add") Add Song
+  div.container
+    each song in songs
+      +songCard(song)
+

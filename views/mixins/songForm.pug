@@ -1,0 +1,22 @@
+mixin songForm(song, actionURL, mode, title)
+
+    div.form-panel
+        div.header= title
+            form(action=actionURL method='post')
+                div.form-input
+                    label(for='song_time') Song Length:
+                    input(type='text' id='song_time' name='song_time' value=song.song_time)
+                div.form-input
+                    label(for='image') Song Image URL:
+                    input(type='text' id='image' name='image' value=song.image)
+                div.form-input
+                    label(for='song_title') Song Title:
+                    input(type='text' id='song_title' name='song_title' value=song.song_title)
+                div.form-input
+                    label(for='artist_name') Song Artist's Name:
+                    input(type='text' id='artist_name' name='artist_name' value=song.artist_name)
+                div.button-row
+                    a.button.cancel(href='/') Cancel
+                    if (mode==='edit')
+                        a.button.delete(href=`/delete/${song.id}`) Delete
+                    button.button.save(type='submit') Submit

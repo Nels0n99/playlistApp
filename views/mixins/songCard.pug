@@ -1,0 +1,12 @@
+mixin songCard(song)
+
+            div.card
+                div.card-header
+                    div.backdrop
+                    div.card-title=song.song_time
+                    img.card-header-image(src=song.image)
+                div.card-body
+                    div.song-title=song.song_title
+                    div.artist-name=song.artist_name
+                    div.edit
+                        a(href=`/edit/${song.id}`) Edit

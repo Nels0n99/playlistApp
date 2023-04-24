@@ -1,0 +1,5 @@
+extends layout
+
+block content
+    include mixins/songForm
+    +songForm(song, `/edit/${song.id}`, 'edit', 'Edit Song')
