@@ -12,6 +12,13 @@ body {
   flex-wrap: wrap;
 }
 
+.content {
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  width: 1000px;
+}
+
 .card {
   background: white;
   border-radius: 26px;
@@ -78,12 +85,15 @@ body {
 
 .button {
   display: block;
-  border-radius: 5px;
   padding: 8px 16px;
-  text-decoration: none;
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   font-size: 14px;
-  line-height: 1.25rem;
+  border: 1px solid #6B7280;
+  color: #374151;
+  box-shadow: none;
+  text-decoration: none;
+  border-radius: 5px;
+  width: fit-content;
+  margin-right: 16px;
 }
 
 .button.save {
@@ -92,7 +102,51 @@ body {
   border: 1px solid #164E63;
 }
 
+.button.delete {
+  background: red;
+  color: white;
+  border: 1px solid red;
+}
+
+.button.cancel {
+  background: grey;
+  color: white;
+  border: 1px solid grey;
+}
+
 .add-button-row{
   display: flex;
   justify-content: flex-start;
+}
+
+.main-header {
+  background: #c1ffc1;
+  font-size: 55px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-header{
+  font-size: 16px;
+  color: #52525B;
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  color: #3F3F46;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input {
+   border-radius: 8px;
+   padding: 8px 12px;
+   border: 1px solid #d1d5db;
+ }
+
+.button-row{
+  display: flex;
 }

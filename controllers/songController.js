@@ -1,8 +1,13 @@
 const {Song} = require('../models')
 
 module.exports.viewAll = async function(req, res, next){
-    const songs = await Song.findAll();
-    res.render('index', {songs});
+    let songs = await Song.findAll();
+    let searchRandom = req.query.random || false;
+    if (songs.length > 0 && searchRandom) {
+        let randomIndex = getRandomInt(songs.length);
+        songs = [songs[randomIndex]];
+    }
+    res.render('index', {songs, searchRandom});
 }
 
 module.exports.renderEditForm = async function (req, res, next){
@@ -59,4 +64,8 @@ module.exports.addSong = async function(req, res){
             artist_name: req.body.artist_name
         });
     res.redirect('/')
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random()* max);
 }

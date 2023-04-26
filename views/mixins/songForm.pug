@@ -1,7 +1,7 @@
 mixin songForm(song, actionURL, mode, title)
 
-    div.form-panel
-        div.header= title
+    div.content
+        div.form-header= title
             form(action=actionURL method='post')
                 div.form-input
                     label(for='song_time') Song Length:
