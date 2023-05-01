@@ -4,5 +4,20 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    header.main-header My Playlist
-    block content
+    nav
+      div.container
+        h3 My Playlist
+        ul
+          if user
+            li
+              div Hello #{user.displayName}
+            li
+              a(href="/logout") Log Out
+          else
+            li
+              a(href="/login") Login
+            li
+              a(href="/register") Register
+
+    div.container
+      block content

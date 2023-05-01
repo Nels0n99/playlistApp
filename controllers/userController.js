@@ -1,7 +1,7 @@
 const {User} = require('../models');
 const md5 = require('md5');
-const passport = require('passport')
-;
+const passport = require('passport');
+
 module.exports.renderRegistration = function(req, res){
     res.render('users/register');
 };
@@ -23,12 +23,12 @@ module.exports.register = async function(req, res){
             first_name: req.body.first_name,
             last_name: req.body.last_name
         });
-        res.redirect('/');
+        res.redirect('/login');
     }
 }
 
 module.exports.renderLogin = function (req, res) {
-    let error = null
+    let error = null;
     if  (req.session.messages && req.session.messages.length>0){
         error = req.session.messages[0]
     }
@@ -43,5 +43,5 @@ module.exports.authenticate = passport.authenticate('local', {
 
 module.exports.logout = function(req, res){
     req.logout();
-    res.redirect('/login')
+    res.redirect('/login');
 }

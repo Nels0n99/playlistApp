@@ -1,4 +1,4 @@
-const {Song} = require('../models')
+const {Song} = require('../models');
 
 module.exports.viewAll = async function(req, res, next){
     let songs = await Song.findAll();
