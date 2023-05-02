@@ -114,11 +114,6 @@ body {
   border: 1px solid grey;
 }
 
-.add-button-row{
-  display: flex;
-  justify-content: flex-start;
-}
-
 .main-header {
   background: #c1ffc1;
   font-size: 55px;
