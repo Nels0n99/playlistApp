@@ -11,15 +11,17 @@ block content
                 div.input-container
                     label(for="password") Password
                     input(type="password" name="password" id="password")
-            div.input-form-row
                 div.input-container
                     label(for="first_name") First Name
                     input(type="text" name="first_name" id="first_name")
                 div.input-container
                     label(for="last_name") Last Name
                     input(type="text" name="last_name" id="last_name")
-
-            div.form-button-row
+                div.input-container
+                    label(for="role") Role
+                    select(id="role" name="role")
+                        each role in roles
+                            option(value=role.id) #{role.role_name}
                 button.button.primary(type="submit") Register
         if error
             p.error=error
