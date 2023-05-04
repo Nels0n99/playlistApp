@@ -1,45 +1,53 @@
 const passport = require('passport');
-const {Strategy} = require('passport-local');
-const {User} = require('../models');
+const {Strategy} = require('passport-local').Strategy;
+const {User, Role} = require('../models');
 const md5 = require('md5');
 
-async function authenticate(username, password, done) {
+
+async function verifyUser(username, password, done) {
     //fetch user from database
     const user = await User.findOne({
         where: {
-            email: username
+            email: username,
+            password: md5(password)
         }
     });
     //if no user, or passwords do not match, call done with a failure message
-    if (!user || md5(password) !== user.password) {
+    if (!user) {
         return done(null, false, {message: 'Incorrect email or password.'});
     }
     //passed authentication, so user passes
-    return done(null, {
-        id: user.id,
-        username: user.email,
-        displayName: user.first_name
+    return done(false, {
+        id: user.id
     });
 }
 
-const validationStrategy = new Strategy({
-        usernameField: 'email',
-        passwordField: 'password'
-    },
-    authenticate);
+passport.use(
+    new Strategy(
+        {
+            usernameField: 'email',
+            passwordField: 'password'
+        },
+        verifyUser
+    )
+);
 
-passport.use(validationStrategy);
 
-passport.serializeUser(function(user, cb) {
+passport.serializeUser(function(user, done) {
     process.nextTick(function () {
-        cb(null, {id: user.id, username: user.email, displayName: user.displayName});
+        done(null, {id: user.id});
     });
 });
 
-passport.deserializeUser(async function (user, cb) {
-    // const dbUser = await User.findByPk(user.id);
+
+passport.deserializeUser(async function (user, done) {
+    const userModel = await User.findByPk(user.id, {
+        include: [
+            'role'
+        ]
+    });
     process.nextTick(function () {
-        return cb(null, user)
+        return done(null, userModel)
     });
 });
 

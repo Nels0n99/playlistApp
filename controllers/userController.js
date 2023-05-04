@@ -5,7 +5,7 @@ const passport = require('passport');
 module.exports.renderRegistration = async function(req, res){
     const roles = await Role.findAll();
     console.log(roles);
-    res.render('users/register', {roles});
+    res.render('user/register', {roles});
 };
 
 module.exports.register = async function(req, res){
@@ -15,7 +15,7 @@ module.exports.register = async function(req, res){
         }
     });
     if(existingUser){
-        res.render('users/register', {
+        res.render('user/register', {
             error: 'User Already Exists'
         })
     } else {
@@ -35,7 +35,7 @@ module.exports.renderLogin = function (req, res) {
     if  (req.session.messages && req.session.messages.length>0){
         error = req.session.messages[0]
     }
-    res.render('users/login', {error});
+    res.render('user/login', {error});
 }
 
 module.exports.authenticate = passport.authenticate('local', {
