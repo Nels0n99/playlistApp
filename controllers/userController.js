@@ -2,6 +2,11 @@ const {User, Role} = require('../models');
 const md5 = require('md5');
 const passport = require('passport');
 
+module.exports.viewAll = async function (req, res){
+    const users = await User.findAll();
+    res.render('user/view_all', {users})
+}
+
 module.exports.renderRegistration = async function(req, res){
     const roles = await Role.findAll();
     console.log(roles);

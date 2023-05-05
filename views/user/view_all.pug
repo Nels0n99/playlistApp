@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h3 Users
+    table
+        thead
+            tr
+                th First
+                th Last
+        tbody
+            each user in users
+                tr
+                    td= user.first_name
+                    td= user.last_name
+                    td
+                        a.button.delete(href=`/user/delete/${user.id}`) Delete User
