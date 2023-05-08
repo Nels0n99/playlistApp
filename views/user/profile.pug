@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+    div
+        h3 User: #{user.first_name} #{user.last_name}
+    h4 User's Songs
+        div.card
+            div.card-header
+                div.backdrop
+                div.card-title=song.song_time
+                img.card-header-image(src=song.image)
+            div.card-body
+                div.song-title=song.song_title
+                div.artist-name=song.artist_name
+                div.edit

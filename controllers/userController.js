@@ -53,3 +53,12 @@ module.exports.logout = function(req, res){
     req.logout();
     res.redirect('/login');
 }
+
+module.exports.deleteUser = async function (req, res){
+    await User.destroy({
+        where: {
+            id: req.params.id
+        }
+    });
+    res.redirect('/users')
+}

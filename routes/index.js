@@ -22,6 +22,7 @@ router.get('/add', redirectGuests, userHasRole('user'), songController.renderAdd
 router.post('/add', redirectGuests,userHasRole('user'), songController.addSong);
 
 router.get('/users', redirectGuests, userController.viewAll);
+router.get('/users/delete/:id', userController.deleteUser);
 router.get('/register', userController.renderRegistration);
 router.post('/register', userController.register);
 
