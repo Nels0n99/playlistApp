@@ -62,3 +62,4 @@ module.exports.deleteUser = async function (req, res){
     });
     res.redirect('/users')
 }
+

@@ -145,3 +145,12 @@ input {
 .button-row{
   display: flex;
 }
+
+table{
+  width: 100%;
+}
+
+td, th{
+  padding: 8px 12px;
+  text-align: left;
+}

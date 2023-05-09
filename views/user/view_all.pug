@@ -7,13 +7,10 @@ block content
             tr
                 th First
                 th Last
-                th User Profile
         tbody
             each user in users
                 tr
                     td= user.first_name
                     td= user.last_name
-                    td
-                        a(href=`/users/profile/${user.id}`) View User
                     td
                         a.button.delete(href=`/users/delete/${user.id}`) Delete User
