@@ -15,11 +15,11 @@ function redirectGuests(req, res, next){
 
 /* GET home page. */
 router.get('/', redirectGuests, songController.viewAll);
-router.get('/edit/:id', redirectGuests, userHasRole('user'), songController.renderEditForm);
-router.post('/edit/:id', redirectGuests, userHasRole('user'), songController.updateSong);
-router.get('/delete/:id', redirectGuests, userHasRole('user'), songController.deleteSong);
-router.get('/add', redirectGuests, userHasRole('user'), songController.renderAddForm);
-router.post('/add', redirectGuests,userHasRole('user'), songController.addSong);
+router.get('/edit/:id', redirectGuests, songController.renderEditForm);
+router.post('/edit/:id', redirectGuests, songController.updateSong);
+router.get('/delete/:id', redirectGuests, songController.deleteSong);
+router.get('/add', redirectGuests, songController.renderAddForm);
+router.post('/add', redirectGuests, songController.addSong);
 
 router.get('/users', redirectGuests, userHasRole('admin'), userController.viewAll);
 router.get('/users/delete/:id', redirectGuests, userHasRole('admin'), userController.deleteUser);

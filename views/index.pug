@@ -3,10 +3,9 @@ extends layout
 block content
   include mixins/songCard
   div.container
-    if user.is('user')
-      div.add-button-row
-        a.button.save(href="/add") Add Song
-  div.container
+    a.button.primary(href="/add") Add Song
+  div.space
+  div.card-container
     each song in songs
       +songCard(song)
 

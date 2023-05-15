@@ -1,16 +1,17 @@
 extends ../layout
 
 block content
-    h3 Users
-    table
-        thead
-            tr
-                th First
-                th Last
-        tbody
-            each user in users
+    div.content-container
+        h3 Users
+        table
+            thead
                 tr
-                    td= user.first_name
-                    td= user.last_name
-                    td
-                        a.button.delete(href=`/users/delete/${user.id}`) Delete User
+                    th First
+                    th Last
+            tbody
+                each user in users
+                    tr
+                        td= user.first_name
+                        td= user.last_name
+                        td
+                            a.button.delete(href=`/users/delete/${user.id}`) Delete User
