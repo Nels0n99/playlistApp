@@ -10,7 +10,7 @@ html
         ul
           if user
             li
-              a(href="#") Hello #{user.first_name}
+              a(href="/") Hello #{user.first_name}
             if user.is('admin')
               li
                 a(href="/users") Users

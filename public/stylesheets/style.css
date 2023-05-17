@@ -30,9 +30,14 @@ a {
 
 .content {
   box-shadow: 0 1px 3px 0 rgba(0 0 0  0.1), 0 1px 2px -1px rgba(0 0 0 0.1);
-  background: white;
+  background: rgba(0, 178, 182, 0.48);
   padding: 50px;
   border-radius: 12px;
+}
+
+.content h3{
+  font-size: 20px;
+  color: gold;
 }
 
 .page-header {
@@ -43,7 +48,7 @@ a {
 .button-row {
   margin-bottom: 50px;
   padding-bottom: 50px;
-  border-bottom: 1px solid #D4D4D8;
+  border-bottom: 1px solid black;
 }
 
 .button {
@@ -55,10 +60,15 @@ a {
   box-shadow: 0 1px 2px 0 rgba(0 0 0  0.05);
 }
 
+.button.button {
+  cursor: pointer;
+}
+
 .button.primary {
-  background: #065F46;
+  background: #005f3b;
   color: white;
-  border-color: #065F46;
+  border-color: #005f3b;
+  font-size: 16px;
 }
 
 .button.cancel {
@@ -75,8 +85,9 @@ a {
 
 label {
   display: block;
-  color: #3F3F46;
+  color: gold;
   font-weight: bold;
+  font-size: 16px;
   margin-bottom: 4px;
 }
 
@@ -98,12 +109,12 @@ select {
   padding-top: 16px;
   margin-top: 16px;
 
-  border-top: 1px solid #D4D4D8;
+  border-top: 1px solid black;
 }
 
 .form-header {
   font-size: 16px;
-  color: #52525B;
+  color: gold;
   margin-bottom: 16px;
 }
 
@@ -169,7 +180,7 @@ nav {
 .card-title {
   position: absolute;
   color: white;
-  font-size: 12px;
+  font-size: 14px;
   bottom: 6px;
   right: 10px;
 }
@@ -185,11 +196,13 @@ nav {
 
 .card-header{
   position: relative;
+  background-color: #ffecb6
 }
 
 .card-body {
   padding: 24px;
   color: #111827;
+  background-color: #ffecb6;
 }
 
 .edit {
@@ -209,7 +222,7 @@ nav {
 }
 
 .artist-name {
-  color: #a5a5a5;
+  color: #7e7e7e;
 }
 
 .space {
@@ -217,9 +230,11 @@ nav {
 }
 
 .content-container{
-  background: white;
+  background: #99ffba;
   border-radius: 12px;
   padding: 20px;
+  font-size: 18px;
+  color: #b92fb8;
 }
 
 table{
