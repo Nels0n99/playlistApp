@@ -230,11 +230,11 @@ nav {
 }
 
 .content-container{
-  background: #99ffba;
+  background: rgba(56, 0, 182, 0.48);
   border-radius: 12px;
   padding: 20px;
   font-size: 18px;
-  color: #b92fb8;
+  color: gold;
 }
 
 table{
