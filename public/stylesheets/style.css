@@ -24,8 +24,10 @@ a {
 }
 
 .card-container {
+  padding: 48px;
   display: flex;
   gap: 26px;
+  flex-wrap: wrap;
 }
 
 .content {
@@ -167,7 +169,7 @@ nav {
 }
 
 .card {
-  background: white;
+  background-color: #ffecb6;
   border-radius: 26px;
   width: 450px;
   position: relative;
@@ -204,13 +206,11 @@ nav {
 
 .card-header{
   position: relative;
-  background-color: #ffecb6
 }
 
 .card-body {
   padding: 24px;
   color: #111827;
-  background-color: #ffecb6;
 }
 
 .edit {
