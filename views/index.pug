@@ -3,7 +3,7 @@ extends layout
 block content
   include mixins/songCard
   div.container
-    a.button.primary(href="/add") Add Song
+    a.button.add(href="/add") Add Song
   div.space
   div.card-container
     each song in songs

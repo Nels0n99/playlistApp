@@ -64,10 +64,17 @@ a {
   cursor: pointer;
 }
 
-.button.primary {
-  background: #005f3b;
+.button.add {
+  background-color: #9fee90;
   color: white;
-  border-color: #005f3b;
+  border-color: lightgreen;
+  font-size: 16px;
+}
+
+.button.primary {
+  background: #ff99cc;
+  color: white;
+  border-color: #ff99cc;
   font-size: 16px;
 }
 
@@ -78,9 +85,9 @@ a {
 }
 
 .button.delete {
-  background: red;
+  background: #ff8282;
   color: white;
-  border-color: red;
+  border-color: #ff8282;
 }
 
 label {
@@ -219,11 +226,12 @@ nav {
 }
 
 .song-title {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .artist-name {
   color: #7e7e7e;
+  font-size: 14px;
 }
 
 .space {
@@ -245,4 +253,8 @@ table{
 td, th{
   padding: 8px 12px;
   text-align: left;
+}
+
+.error {
+  color: #ff8a8a;
 }
