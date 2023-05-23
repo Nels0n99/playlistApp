@@ -14,14 +14,24 @@ module.exports.renderRegistration = async function(req, res){
 };
 
 module.exports.register = async function(req, res){
-    await User.create({
-        email: req.body.email,
-        password: md5(req.body.password),
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        role_id: req.body.role
+    const roles = await Role.findAll();
+    const existingUser = await User.findOne({
+        where: {
+            email: req.body.email
+        }
     });
-    res.redirect('/login');
+    if (existingUser){
+        res.render('user/register', {roles, error: 'User Already Exists'})
+    } else {
+        await User.create({
+            email: req.body.email,
+            password: md5(req.body.password),
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            role_id: req.body.role
+        });
+        res.redirect('/login');
+    }
 }
 
 module.exports.renderLogin = function (req, res) {
